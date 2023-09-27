@@ -72,8 +72,8 @@ pub fn era_payout(
 	let min_annual_inflation = Perquintill::from_rational(25u64, 1000u64);
 	let delta_annual_inflation = max_annual_inflation.saturating_sub(min_annual_inflation);
 
-	// 30% reserved for up to 60 slots.
-	let auction_proportion = Perquintill::from_rational(auctioned_slots.min(60), 200u64);
+	// 20% reserved for up to 60 slots.
+	let auction_proportion = Perquintill::from_rational(auctioned_slots.min(60), 300u64);
 
 	// Therefore the ideal amount at stake (as a percentage of total issuance) is 75% less the
 	// amount that we expect to be taken up with auctions.
